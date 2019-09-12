@@ -28,6 +28,10 @@
 				{
 					"id": "top-stories",
 					"name": "Top 500"
+				},
+				{
+					"id": "ask-hn",
+					"name": "Ask HN"
 				}
 			]
 		}
