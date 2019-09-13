@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onView:top-stories"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -32,6 +32,25 @@
 				{
 					"id": "ask-hn",
 					"name": "Ask HN"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "hnCode.refresh",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "hnCode.refresh",
+					"when": "view == hncode",
+					"group": "navigation"
 				}
 			]
 		}
