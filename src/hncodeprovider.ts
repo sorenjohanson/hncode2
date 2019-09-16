@@ -15,7 +15,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
     }
 
     public getTreeItem(element: HNData): vscode.TreeItem {
-		return new Story(element.title, vscode.TreeItemCollapsibleState.None, element.url, {
+		return new Story(`${element.id}: ${element.title}`, vscode.TreeItemCollapsibleState.None, element.url, {
             command: 'hncode.openurl',
             title: '',
             arguments: [element.url]
@@ -63,11 +63,7 @@ export class Story extends vscode.TreeItem {
 	}
 
 	get tooltip(): string {
-		return `${this.label}`;
-	}
-
-	get description(): string {
-		return this.label;
+		return `${this.url}`;
 	}
 
 	contextValue = 'story';

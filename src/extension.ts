@@ -7,8 +7,6 @@ import { getTop, getStories, getAsk } from './api';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {
-	vscode.window.showInformationMessage("Extension HNCode loaded!");
-
 	vscode.commands.registerCommand('hncode.openurl', link => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link)));
 
 	// Top Stories
