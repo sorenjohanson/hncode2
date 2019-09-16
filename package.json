@@ -37,7 +37,7 @@
 		},
 		"commands": [
 			{
-				"command": "hnCode.refresh",
+				"command": "hncode.refresh",
 				"title": "Refresh",
 				"icon": {
 					"light": "resources/light/refresh.svg",
@@ -48,7 +48,7 @@
 		"menus": {
 			"view/title": [
 				{
-					"command": "hnCode.refresh",
+					"command": "hncode.refresh",
 					"when": "view == hncode",
 					"group": "navigation"
 				}

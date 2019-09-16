@@ -1,10 +1,6 @@
 import * as vscode from 'vscode';
-import * as path from 'path';
-
-import * as rm from 'typed-rest-client/RestClient';
-
 import { HNData } from './interface';
-import { getStory, getTop, getKids } from './api';
+import { getTop, getStories } from './api';
 
 // I need a TreeDataProvider extending from vscode.TreeDataProvider<T>
 // And an HNStory class would be good too I guess
@@ -24,75 +20,29 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	private _onDidChangeTreeData: vscode.EventEmitter<any> = new vscode.EventEmitter<any>();
 	readonly onDidChangeTreeData: vscode.Event<any> = this._onDidChangeTreeData.event;
 
-	constructor(private readonly stories: HNData[]) { }
+	constructor(private readonly stories: HNData[]) {
+    }
 
 	public refresh(): any {
 		this._onDidChangeTreeData.fire();
     }
 
     public getTreeItem(element: HNData): vscode.TreeItem {
-		return {
-            label: element.title,
-            id: element.id,
-            resourceUri: element.url,
-			collapsibleState: void 0
-		};
+		return new vscode.TreeItem(element.title, vscode.TreeItemCollapsibleState.None);
     }
 
     public getChildren(element?: HNData): Thenable<HNData[]> {
         // @TODO: Fix loop
-        if (element) {
-            return getKids(element.kids);
-        } else {
-
-        }
-    }
-
-    public getParent(element: HNData): HNData | null {
-        console.log(element);
-        const url = element.url;
-        return url ? element : null;
-    }
-}
-
-export class HNStoryExplorer {
-
-    private storyViewer: vscode.TreeView<HNData> | undefined;
-
-    constructor(context: vscode.ExtensionContext, stories: number[]) {
-        getStories(stories).then(response => {
-            if (response) {
-                const treeDataProvider = new HNTreeDataProvider(hnStories);
-                vscode.commands.registerCommand('hnCode.refresh', () => treeDataProvider.refresh());
-                this.storyViewer = vscode.window.createTreeView('top-stories', { treeDataProvider });
+        return new Promise<HNData[]>((c, e) => {
+            if (element) {
+                c(getStories(element.kids));
+            } else {
+                getTop().then(response => {
+                    getStories(response).then(response => {
+                        c(response);
+                    });
+                });
             }
-        });     
-    }
-}
-
-async function getStories(stories: number[]) {
-    if (stories) {
-        let hnPromises: Array<Promise<HNData>> = [];
-        let hnStories: HNData[] = [];
-        for (let i in stories) {
-            let fetch: Promise<HNData> = new Promise(async (resolve, reject) => {
-                let story: HNData = await getStory(stories[i].toString());
-                if (story) {
-                    resolve(story);
-                } else {
-                    reject();
-                }
-            });
-            hnPromises.push(fetch);
-        }
-
-        Promise.all(hnPromises).then(responses => {
-            responses.forEach(response => {
-                if (response) {
-                    hnStories.push(response);
-                }
-            });
-            return hnStories;
         });
     }
 }
