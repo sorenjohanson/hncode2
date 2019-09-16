@@ -1,14 +1,24 @@
 {
 	"name": "hncode2",
-	"displayName": "hncode2",
+	"displayName": "HNCode²",
 	"description": "Browse Hacker News in a tree view tab",
 	"version": "0.0.1",
+	"publisher": "sjohanson",
+	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
 		"vscode": "^1.38.0"
+	},
+	"bugs": {
+		"url": "https://github.com/CER10TY/hncode2/issues",
+		"email": "contact@soeren.codes"
 	},
 	"categories": [
 		"Other"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cer10ty/hncode2.git"
+	},
 	"activationEvents": [
 		"onView:top-stories",
 		"onView:ask-hn"
