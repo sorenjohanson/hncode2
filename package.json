@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onView:top-stories"
+		"onView:top-stories",
+		"onView:ask-hn"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -27,7 +28,7 @@
 			"hncode": [
 				{
 					"id": "top-stories",
-					"name": "Top 500"
+					"name": "Top Stories"
 				},
 				{
 					"id": "ask-hn",
@@ -49,11 +50,25 @@
 			"view/title": [
 				{
 					"command": "hncode.refresh",
-					"when": "view == hncode",
+					"when": "view == top-stories || view == ask-hn",
 					"group": "navigation"
 				}
 			]
-		}
+		},
+		"configuration": [
+			{
+				"title": "HNCode²",
+				"properties": {
+					"hncode2.limitation": {
+						"type": "integer",
+						"minimum": 1,
+						"maximum": 500,
+						"default": 30,
+						"description": "Set the amount of items to be loaded on the front page."
+					}
+				}
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
