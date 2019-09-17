@@ -27,8 +27,6 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-* It looks ugly.
-* Comments are not being pulled yet.
 * Active tabs (ie. Ask HN) are not being greyed out yet.
 
 ## Release Note
