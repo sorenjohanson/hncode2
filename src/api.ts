@@ -44,6 +44,30 @@ export function getAsk(): Thenable<Array<number>> {
     });
 }
 
+export function getNew(): Thenable<Array<number>> {
+    return new Promise<Array<number>>((c, e) => {
+        restClient.get<Array<number>>('newstories.json?print=pretty').then(response => {
+            if (response.result) {
+                c(response.result);
+            }
+        }).catch(error => {
+            e(error.message);
+        });
+    });
+}
+
+export function getShow(): Thenable<Array<number>> {
+    return new Promise<Array<number>>((c, e) => {
+        restClient.get<Array<number>>('showstories.json?print=pretty').then(response => {
+            if (response.result) {
+                c(response.result);
+            }
+        }).catch(error => {
+            e(error.message);
+        });
+    });
+}
+
 export function getStories(stories: Array<number>): Promise<HNData[]> {
     return new Promise<HNData[]>(async (c, e) => {
         let promises: Array<Promise<HNData>> = [];

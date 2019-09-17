@@ -2,7 +2,7 @@
 	"name": "hncode2",
 	"displayName": "HNCode²",
 	"description": "Browse Hacker News in a tree view tab",
-	"version": "0.0.1",
+	"version": "0.0.5",
 	"publisher": "sjohanson",
 	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
@@ -39,11 +39,7 @@
 			"hncode": [
 				{
 					"id": "top-stories",
-					"name": "Top Stories"
-				},
-				{
-					"id": "ask-hn",
-					"name": "Ask HN"
+					"name": "Stories"
 				}
 			]
 		},
@@ -55,14 +51,46 @@
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
 				}
+			},
+			{
+				"command": "hncode.ask",
+				"title": "Ask HN"
+			},
+			{
+				"command": "hncode.top",
+				"title": "Top Stories"
+			},
+			{
+				"command": "hncode.new",
+				"title": "New Stories"
+			},
+			{
+				"command": "hncode.show",
+				"title": "Show HN"
 			}
 		],
 		"menus": {
 			"view/title": [
 				{
 					"command": "hncode.refresh",
-					"when": "view == top-stories || view == ask-hn",
+					"when": "view == top-stories",
 					"group": "navigation"
+				},
+				{
+					"command": "hncode.ask",
+					"when": "view == top-stories"
+				},
+				{
+					"command": "hncode.top",
+					"when": "view == top-stories"
+				},
+				{
+					"command": "hncode.new",
+					"when": "view == top-stories"
+				},
+				{
+					"command": "hncode.show",
+					"when": "view == top-stories"
 				}
 			]
 		},

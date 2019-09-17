@@ -14,18 +14,14 @@ export async function activate(context: vscode.ExtensionContext) {
 		getStories(response).then(response => {
 			const treeDataProvider = new HNTreeDataProvider(response, "top");
 			vscode.window.registerTreeDataProvider('top-stories', treeDataProvider);
-			vscode.commands.registerCommand('hncode.refresh', () => treeDataProvider.refresh());
-		}).catch(error => {
-			vscode.window.showErrorMessage(error.mmesage);
-		});
-	});
 
-	// Ask HN
-	getAsk().then(response => {
-		getStories(response).then(response => {
-			const askProvider = new HNTreeDataProvider(response, "ask");
-			vscode.window.registerTreeDataProvider('ask-hn', askProvider);
-			vscode.commands.registerCommand('hncode.refresh', () => askProvider.refresh());
+			/* REGISTER COMMANDS */
+
+			vscode.commands.registerCommand('hncode.refresh', () => treeDataProvider.refresh());
+			vscode.commands.registerCommand('hncode.top', () => treeDataProvider.setIdentifier("top"));
+			vscode.commands.registerCommand('hncode.ask', () => treeDataProvider.setIdentifier("ask"));
+			vscode.commands.registerCommand('hncode.new', () => treeDataProvider.setIdentifier("new"));
+			vscode.commands.registerCommand('hncode.show', () => treeDataProvider.setIdentifier("show"));
 		}).catch(error => {
 			vscode.window.showErrorMessage(error.mmesage);
 		});
