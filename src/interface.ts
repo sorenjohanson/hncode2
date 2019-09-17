@@ -1,9 +1,9 @@
 import * as vscode from 'vscode';
 
 export interface HNData {
-    by: string;
     id: string;
-    kids: number[];
-    title: string;
+    title?: string;
+    descendants?: number;
     url?: vscode.Uri;
+    isComment?: boolean;
 }

@@ -21,8 +21,8 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 
     public getTreeItem(element: HNData): vscode.TreeItem {
 		let url: vscode.Uri = element.url ? element.url : <vscode.Uri><unknown>(`https://news.ycombinator.com/item?id=${element.id}`);
-
-		return new Story(`${element.title}`, vscode.TreeItemCollapsibleState.Collapsed, this.identifier, url, {
+		let collapsed = element.isComment ? vscode.TreeItemCollapsibleState.None : vscode.TreeItemCollapsibleState.Collapsed;
+		return new Story(`${element.title}`, collapsed, this.identifier, url, {
             command: 'hncode.openurl',
             title: '',
             arguments: [url]
@@ -32,7 +32,16 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
     public getChildren(element?: HNData): Thenable<HNData[]> {
         return new Promise<HNData[]>((c, e) => {
 			if (element) {
-				// Do nothing
+				let data: HNData[] = [];
+				let comments: HNData = {
+					"id": element.id,
+					"descendants": element.descendants,
+					"title": `${element.descendants} comments`,
+					"url": <vscode.Uri><unknown>(`https://news.ycombinator.com/item?id=${element.id}`),
+					"isComment": true
+				};
+				data.push(comments);
+				c(data);
 			} else {
 				switch(this.identifier) {
 					case "top":
@@ -88,8 +97,19 @@ export class Story extends vscode.TreeItem {
 		super(label, collapsibleState);
 	}
 
-	get tooltip(): string {
-		return `${this.url}`;
+	get description(): string {
+		let desc: string = '';
+
+		let linkRe: RegExp = new RegExp('\/\/([a-zA-Z\.0-9\-\_]*)\/', 'm');
+		let url: vscode.Uri | undefined = this.url;
+		if (url) {
+			let links: RegExpMatchArray | null = url.toString().match(linkRe);
+			if (links) {
+				desc = links[1];
+			}
+		}
+		return desc;
 	}
+
 	contextValue = this.cValue;
 }
