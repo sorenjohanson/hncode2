@@ -3,8 +3,10 @@
 import * as vscode from 'vscode';
 import { HNTreeDataProvider } from './hncodeprovider';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+/**
+ * This function is called when the activationContext (sse package.json "activationEvents") is triggered.
+ * @param context [ExtensionContext](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext) provided by VSCode. 
+ */
 export async function activate(context: vscode.ExtensionContext) {
 	vscode.commands.registerCommand('hncode.openurl', link => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link)));
 	const treeDataProvider = new HNTreeDataProvider("top");

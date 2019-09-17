@@ -29,7 +29,17 @@ This extension contributes the following settings:
 
 * Active tabs (ie. Ask HN) are not being greyed out yet.
 
+## Documentation
+
+The documentation for this extension is available at https://www.soeren.codes/hncode2/ and provided via TypeDoc.
+
 ## Release Note
+
+### 0.1.5
+
+* NEW: Hosted documentation provided by TypeDoc.
+* FIXED: Routing errors in documentation.
+* FIXED: Various bugfixes.
 
 ### 0.1.1
 
