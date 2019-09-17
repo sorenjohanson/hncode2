@@ -5,7 +5,7 @@ export interface HNData {
     id: string;
     /** @description Title of the HN Story Item */
     title?: string;
-    /** @description  Amount of comments of the HN Story Item */
+    /** @description Amount of comments of the HN Story Item */
     descendants?: number;
     /** @description External URL of the HN Story Item */
     url?: vscode.Uri;

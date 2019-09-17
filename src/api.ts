@@ -15,7 +15,7 @@ const restClient: rm.RestClient = new rm.RestClient('hncode', BASE_URL);
 
 /**
  * Get a single story using item IDs from HN API.
- * @param id Story ID, eg 192327.
+ * @param id - Story ID, eg 192327.
  */
 export function getStory(id?: string): Thenable<HNData> {
     return new Promise<HNData>((c, e) => {

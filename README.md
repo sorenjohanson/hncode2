@@ -33,7 +33,7 @@ This extension contributes the following settings:
 
 The documentation for this extension is available at https://www.soeren.codes/hncode2/ and provided via TypeDoc.
 
-## Release Note
+## Release Notes
 
 ### 0.1.5
 
