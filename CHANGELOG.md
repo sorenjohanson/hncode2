@@ -2,6 +2,12 @@
 
 All notable changes to the "hncode2" extension will be documented in this file.
 
+### [0.1.5]
+
+* NEW: Hosted documentation provided by TypeDoc.
+* FIXED: Routing errors in documentation.
+* FIXED: Various bugfixes.
+
 ### [0.1.1]
 
 * CHANGED: Removed unnecessary API calls in extension.ts (thanks @ekarbe!)
