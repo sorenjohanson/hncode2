@@ -7,7 +7,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	private _onDidChangeTreeData: vscode.EventEmitter<any> = new vscode.EventEmitter<any>();
 	readonly onDidChangeTreeData: vscode.Event<any> = this._onDidChangeTreeData.event;
 
-	constructor(private readonly stories: HNData[], public identifier: string) {
+	constructor(public identifier: string) {
     }
 
 	public refresh(): any {

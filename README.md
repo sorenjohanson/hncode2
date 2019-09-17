@@ -31,7 +31,11 @@ This extension contributes the following settings:
 * Comments are not being pulled yet.
 * Active tabs (ie. Ask HN) are not being greyed out yet.
 
-## Release Notes
+## Release Note
+
+### 0.1.1
+
+* CHANGED: Removed unnecessary API calls in extension.ts (thanks @ekarbe!)
 
 ### 0.1.0
 
