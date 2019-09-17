@@ -2,6 +2,10 @@
 
 All notable changes to the "hncode2" extension will be documented in this file.
 
+### [0.0.9]
+
+* CHANGED: HNCode² is now named Hacker News for VSCode to increase visibility in Marketplace.
+
 ### [0.0.8]
 
 * NEW: The amount of comments is now shown when expanding a story in tree view.

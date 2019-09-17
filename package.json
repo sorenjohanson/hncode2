@@ -1,8 +1,8 @@
 {
 	"name": "hncode2",
-	"displayName": "HNCode²",
+	"displayName": "Hacker News for VSCode",
 	"description": "Browse Hacker News in a tree view tab",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"publisher": "sjohanson",
 	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
@@ -19,7 +19,10 @@
 		"hackernews",
 		"hacker news",
 		"hn",
-		"y combinator"
+		"y combinator",
+		"widget",
+		"news",
+		"hacker"
 	],
 	"preview": true,
 	"repository": {
