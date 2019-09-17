@@ -33,6 +33,10 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.1.0
+
+* NEW: Marketplace Icon added.
+
 ### 0.0.9
 
 * CHANGED: HNCode² is now named Hacker News for VSCode to increase visibility in Marketplace.
