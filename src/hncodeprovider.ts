@@ -8,10 +8,13 @@ import { getTop, getStories, getAsk, getNew, getShow } from './api';
 export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 
 	private _onDidChangeTreeData: vscode.EventEmitter<any> = new vscode.EventEmitter<any>();
-	/** @param onDidChangeTreeData - Event which fires when view is refreshed (either through action or by changing data provider) */
+
+	/** @description Event which fires when view is refreshed (either through action or by changing data provider) */
 	readonly onDidChangeTreeData: vscode.Event<any> = this._onDidChangeTreeData.event;
 
-	/** @param identifier - String that identifies which tree is being provided (ask, top, new, show) */
+	/**
+	 * @param identifier - String that identifies which tree is being provided (ask, top, new, show)
+	 */
 	constructor(public identifier: string) {
     }
 
@@ -24,7 +27,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	
 	/**
 	 * Function that sets new identifying string and refreshes view after
-	 * @param newIdentifier New string that identifies which tree is being provided
+	 * @param newIdentifier - New string that identifies which tree is being provided
 	 */
 	public setIdentifier(newIdentifier: string): any {
 		this.identifier = newIdentifier;
@@ -33,7 +36,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 
 	/**
 	 * Gets a single tree item for display purposes (called by vscode.TreeDataProvider)
-	 * @param element Data Element passed on from [[getChildren]]
+	 * @param element - Data Element passed on from [[getChildren]]
 	 */
     public getTreeItem(element: HNData): vscode.TreeItem {
 		let url: vscode.Uri = element.url ? element.url : <vscode.Uri><unknown>(`https://news.ycombinator.com/item?id=${element.id}`);
@@ -47,7 +50,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 
 	/**
 	 * Main function called by vscode.TreeDataProvider to populate tree view with relevant stories
-	 * @param element Data Element of which to get comments from
+	 * @param element - Data Element of which to get comments from
 	 */
     public getChildren(element?: HNData): Thenable<HNData[]> {
         return new Promise<HNData[]>((c, e) => {
@@ -105,15 +108,18 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
         });
     }
 }
+
+/**
+ * Provides a vscode.TreeItem with some customization to fit the needs of the HN Tree View.
+ */
 export class Story extends vscode.TreeItem {
 
 	/**
-	 * Provides a vscode.TreeItem with some customization to fit the needs of the HN Tree View.
-	 * @param label Title of the Story displayed
-	 * @param collapsibleState Can this element be expanded (Collapsed) or not (None)?
-	 * @param cValue Context value (top, show, ask, new) of Story
-	 * @param url URL of Story Item
-	 * @param command Command to execute when Story Item is clicked on
+	 * @param label - Title of the Story displayed
+	 * @param collapsibleState - Can this element be expanded (Collapsed) or not (None)?
+	 * @param cValue - Context value (top, show, ask, new) of Story
+	 * @param url - URL of Story Item
+	 * @param command - Command to execute when Story Item is clicked on
 	 */
 	constructor(
 		public readonly label: string,
