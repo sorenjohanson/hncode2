@@ -2,7 +2,7 @@
 	"name": "hncode2",
 	"displayName": "HNCode²",
 	"description": "Browse Hacker News in a tree view tab",
-	"version": "0.0.5",
+	"version": "0.0.8",
 	"publisher": "sjohanson",
 	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
@@ -14,6 +14,12 @@
 	},
 	"categories": [
 		"Other"
+	],
+	"keywords": [
+		"hackernews",
+		"hacker news",
+		"hn",
+		"y combinator"
 	],
 	"preview": true,
 	"repository": {

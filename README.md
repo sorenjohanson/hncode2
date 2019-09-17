@@ -33,6 +33,12 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.0.8
+
+* NEW: The amount of comments is now shown when expanding a story in tree view.
+* NEW: A link to comment section has been provided when clicking on "x comments".
+* FIXES: Various.
+
 ### 0.0.5
 
 * NEW: Browse Ask, Top, Show and New HN through Context Actions.
