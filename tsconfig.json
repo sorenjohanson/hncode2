@@ -19,7 +19,8 @@
 		".vscode-test"
 	],
 	"typedocOptions": {
-		"mode": "modules",
-		"out": "docs"
+		"mode": "file",
+		"out": "docs",
+		"theme": "minimal"
 	}
 }
