@@ -2452,6 +2452,13 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>This TreeDataProvider provides all relevant stories for the tree view.</p>
+				</div>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
@@ -2508,13 +2515,20 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L8">hncodeprovider.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L12">hncodeprovider.ts:12</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>identifier: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>String that identifies which tree is being provided (ask, top, new, show)</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="hntreedataprovider.html" class="tsd-signature-type">HNTreeDataProvider</a></h4>
@@ -2530,7 +2544,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">_on<wbr>Did<wbr>Change<wbr>Tree<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new vscode.EventEmitter&lt;any&gt;()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L7">hncodeprovider.ts:7</a></li>
+						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L10">hncodeprovider.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2540,9 +2554,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">identifier<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L10">hncodeprovider.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L15">hncodeprovider.ts:15</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>String that identifies which tree is being provided (ask, top, new, show)</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="ondidchangetreedata" class="tsd-anchor"></a>
@@ -2550,9 +2569,16 @@ img {
 				<div class="tsd-signature tsd-kind-icon">on<wbr>Did<wbr>Change<wbr>Tree<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;this._onDidChangeTreeData.event</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L8">hncodeprovider.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L12">hncodeprovider.ts:12</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>param</dt>
+						<dd><p>Event which fires when view is refreshed (either through action or by changing data provider)</p>
+						</dd>
+					</dl>
+				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
@@ -2567,13 +2593,21 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L32">hncodeprovider.ts:32</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L52">hncodeprovider.ts:52</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Main function called by vscode.TreeDataProvider to populate tree view with relevant stories</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> element: <a href="../interfaces/hndata.html" class="tsd-signature-type">HNData</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Data Element of which to get comments from</p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Thenable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/hndata.html" class="tsd-signature-type">HNData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2590,13 +2624,21 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L22">hncodeprovider.ts:22</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L38">hncodeprovider.ts:38</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Gets a single tree item for display purposes (called by vscode.TreeDataProvider)</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>element: <a href="../interfaces/hndata.html" class="tsd-signature-type">HNData</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Data Element passed on from <a href="hntreedataprovider.html#getchildren">getChildren</a></p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TreeItem</span></h4>
@@ -2613,9 +2655,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L13">hncodeprovider.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L21">hncodeprovider.ts:21</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Method that refreshes the tree view (this calls <a href="hntreedataprovider.html#getchildren">getChildren</a> again)</p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 					</li>
 				</ul>
@@ -2630,13 +2677,21 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/8f7003b/src/hncodeprovider.ts#L17">hncodeprovider.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/604c376/src/hncodeprovider.ts#L29">hncodeprovider.ts:29</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Function that sets new identifying string and refreshes view after</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>newIdentifier: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>New string that identifies which tree is being provided</p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
