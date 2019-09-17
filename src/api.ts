@@ -3,9 +3,20 @@ import * as rm from 'typed-rest-client/RestClient';
 
 import { HNData } from './interface';
 
+/**
+ * Base URL of Hacker News API.
+ */
 const BASE_URL = 'https://hacker-news.firebaseio.com/v0/';
-let restClient: rm.RestClient = new rm.RestClient('hncode', BASE_URL);
 
+/**
+ * [Typed REST Client](https://github.com/microsoft/typed-rest-client) for use in all API calls.
+ */
+const restClient: rm.RestClient = new rm.RestClient('hncode', BASE_URL);
+
+/**
+ * Get a single story using item IDs from HN API.
+ * @param id Story ID, eg 192327.
+ */
 export function getStory(id?: string): Thenable<HNData> {
     return new Promise<HNData>((c, e) => {
         restClient.get<HNData>('item/' + id + '.json?print=pretty').then(response => {
@@ -20,6 +31,9 @@ export function getStory(id?: string): Thenable<HNData> {
     });
 }
 
+/**
+ * Get the 500 top stories from HN API.
+ */
 export function getTop(): Thenable<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('topstories.json?print=pretty').then(response => {
@@ -32,6 +46,9 @@ export function getTop(): Thenable<Array<number>> {
     });
 }
 
+/**
+ * Get the top 200 Ask HN stories from HN API.
+ */
 export function getAsk(): Thenable<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('askstories.json?print=pretty').then(response => {
@@ -44,6 +61,9 @@ export function getAsk(): Thenable<Array<number>> {
     });
 }
 
+/**
+ * Get the top 500 new stories from HN API.
+ */
 export function getNew(): Thenable<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('newstories.json?print=pretty').then(response => {
@@ -56,6 +76,9 @@ export function getNew(): Thenable<Array<number>> {
     });
 }
 
+/**
+ * Get the top 200 Show HN stories from HN API.
+ */
 export function getShow(): Thenable<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('showstories.json?print=pretty').then(response => {
@@ -68,6 +91,10 @@ export function getShow(): Thenable<Array<number>> {
     });
 }
 
+/**
+ * Iterate over all given story IDs and grab the individual stories from HN API.
+ * @param stories Story IDs previously gathered by [[getTop]], [[getAsk]], [[getNew]] or [[getShow]]
+ */
 export function getStories(stories: Array<number>): Promise<HNData[]> {
     return new Promise<HNData[]>(async (c, e) => {
         let promises: Array<Promise<HNData>> = [];
@@ -84,7 +111,7 @@ export function getStories(stories: Array<number>): Promise<HNData[]> {
                 });
             });
             promises.push(fetch);
-            if (promises.length >= vscode.workspace.getConfiguration("hncode").limitation) {
+            if (promises.length >= vscode.workspace.getConfiguration("hncode2").limitation) {
                 break;
             }
         }

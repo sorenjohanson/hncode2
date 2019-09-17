@@ -2,7 +2,7 @@
 	"name": "hncode2",
 	"displayName": "Hacker News for VSCode",
 	"description": "Browse Hacker News in a tree view tab",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"publisher": "sjohanson",
 	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
@@ -17,9 +17,7 @@
 	],
 	"keywords": [
 		"hackernews",
-		"hacker news",
 		"hn",
-		"y combinator",
 		"widget",
 		"news",
 		"hacker"
@@ -30,8 +28,7 @@
 		"url": "https://github.com/cer10ty/hncode2.git"
 	},
 	"activationEvents": [
-		"onView:top-stories",
-		"onView:ask-hn"
+		"onView:top-stories"
 	],
 	"icon": "resources/HNCode.png",
 	"main": "./out/extension.js",
@@ -106,7 +103,7 @@
 		},
 		"configuration": [
 			{
-				"title": "HNCode²",
+				"title": "Hacker News for VSCode",
 				"properties": {
 					"hncode2.limitation": {
 						"type": "integer",
@@ -133,8 +130,9 @@
 		"@types/vscode": "^1.38.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
+		"typedoc": "^0.15.0",
+		"typescript": "^3.3.1",
 		"vscode-test": "^1.0.2"
 	},
 	"dependencies": {

@@ -17,5 +17,9 @@
 	"exclude": [
 		"node_modules",
 		".vscode-test"
-	]
+	],
+	"typedocOptions": {
+		"mode": "modules",
+		"out": "docs"
+	}
 }
