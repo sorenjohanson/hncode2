@@ -61,19 +61,23 @@
 			},
 			{
 				"command": "hncode.ask",
-				"title": "Ask HN"
+				"title": "Ask HN",
+				"enablement": "!ask-enabled"
 			},
 			{
 				"command": "hncode.top",
-				"title": "Top Stories"
+				"title": "Top Stories",
+				"enablement": "!top-enabled"
 			},
 			{
 				"command": "hncode.new",
-				"title": "New Stories"
+				"title": "New Stories",
+				"enablement": "!new-enabled"
 			},
 			{
 				"command": "hncode.show",
-				"title": "Show HN"
+				"title": "Show HN",
+				"enablement": "!show-enabled"
 			}
 		],
 		"menus": {

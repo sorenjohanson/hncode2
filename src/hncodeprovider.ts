@@ -16,6 +16,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	 * @param identifier - String that identifies which tree is being provided (ask, top, new, show)
 	 */
 	constructor(public identifier: string) {
+		vscode.commands.executeCommand('setContext', `${this.identifier}-enabled`, true);
     }
 
 	/**
@@ -30,7 +31,9 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	 * @param newIdentifier - New string that identifies which tree is being provided
 	 */
 	public setIdentifier(newIdentifier: string): any {
+		vscode.commands.executeCommand('setContext', `${this.identifier}-enabled`, false);
 		this.identifier = newIdentifier;
+		vscode.commands.executeCommand('setContext', `${this.identifier}-enabled`, true);
 		this.refresh();
 	}
 
