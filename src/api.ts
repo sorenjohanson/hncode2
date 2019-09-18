@@ -9,9 +9,14 @@ import { HNData } from './interface';
 const BASE_URL = 'https://hacker-news.firebaseio.com/v0/';
 
 /**
+ * Workspace configuration defined in package.json
+ */
+const config = vscode.workspace.getConfiguration("hncode2");
+
+/**
  * [Typed REST Client](https://github.com/microsoft/typed-rest-client) for use in all API calls.
  */
-const restClient: rm.RestClient = new rm.RestClient('hncode', BASE_URL);
+const restClient: rm.RestClient = new rm.RestClient('hncode', BASE_URL, undefined, { socketTimeout: config.requestTimeout });
 
 /**
  * Get a single story using item IDs from HN API.

@@ -2,7 +2,7 @@
 	"name": "hncode2",
 	"displayName": "Hacker News for VSCode",
 	"description": "Browse Hacker News in a tree view tab",
-	"version": "0.1.5",
+	"version": "0.5.0",
 	"publisher": "sjohanson",
 	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
@@ -115,6 +115,18 @@
 						"maximum": 500,
 						"default": 30,
 						"description": "Set the amount of items to be loaded on the front page."
+					},
+					"hncode2.requestTimeout": {
+						"type": "integer",
+						"default": 10000,
+						"minimum": 1000,
+						"maximum": 60000,
+						"description": "Set the timeout for requests in milliseconds (ms)."
+					},
+					"hncode2.defaultView": {
+						"type": "string",
+						"default": "top",
+						"description": "Set the Default View of the tree view.\nPossible items are: 'top', 'new', 'ask' and 'show'."
 					}
 				}
 			}

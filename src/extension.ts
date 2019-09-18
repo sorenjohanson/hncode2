@@ -9,8 +9,14 @@ import { HNTreeDataProvider } from './hncodeprovider';
  * @param context - Provided by VSCode
  */
 export async function activate(context: vscode.ExtensionContext) {
+
+	/**
+	 * Workspace configuration defined in package.json
+	 */
+	const config = vscode.workspace.getConfiguration("hncode2");
+	
 	vscode.commands.registerCommand('hncode.openurl', link => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link)));
-	const treeDataProvider = new HNTreeDataProvider("top");
+	const treeDataProvider = new HNTreeDataProvider(config.defaultView);
 	vscode.window.registerTreeDataProvider('top-stories', treeDataProvider);
 
 	/* REGISTER COMMANDS */

@@ -24,10 +24,12 @@ This extension requires Visual Studio Code 1.38.0 or later to work properly.
 This extension contributes the following settings:
 
 * `hncode2.limitation`: Set the amount of items to be loaded on the front page.
+* `hncode2.defaultView`: Set the Default View of the tree view.\nPossible items are: 'top', 'new', 'ask' and 'show'.
+* `hncode2.requestTimeout`: Set the timeout for requests in milliseconds (ms).
 
 ## Known Issues
 
-* Active tabs (ie. Ask HN) are not being greyed out yet.
+* Something, somewhere.
 
 ## Documentation
 
