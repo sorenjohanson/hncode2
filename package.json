@@ -22,7 +22,6 @@
 		"news",
 		"hacker"
 	],
-	"preview": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/cer10ty/hncode2.git"

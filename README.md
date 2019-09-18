@@ -42,6 +42,7 @@ The documentation for this extension is available at https://www.soeren.codes/hn
 * NEW: Added socket timeout to API calls.
 * NEW: Selected entries (Top, New etc) are now greyed out.
 * REMOVED: Unnecessary image resources.
+* CHANGED: This extension is no longer a preview.
 
 ### 0.1.5
 
