@@ -37,6 +37,12 @@ The documentation for this extension is available at https://www.soeren.codes/hn
 
 ## Release Notes
 
+### 0.5.0
+
+* NEW: Added socket timeout to API calls.
+* NEW: Selected entries (Top, New etc) are now greyed out.
+* REMOVED: Unnecessary image resources.
+
 ### 0.1.5
 
 * NEW: Hosted documentation provided by TypeDoc.
