@@ -24,7 +24,7 @@
 		"theme": "minimal",
 		"hideGenerator": true,
 		"exclude": ["**/test/**/*"],
-		"gaID": "UA-148189416-1",
+		"gaID": "UA-142593158-1",
 		"gitRevision": "master"
 	}
 }
