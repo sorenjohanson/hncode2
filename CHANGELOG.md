@@ -2,6 +2,11 @@
 
 All notable changes to the "hncode2" extension will be documented in this file.
 
+### [1.0.0]
+
+* NEW: Better error handling when no internet connectioon present (thanks to @ekarbe!)
+* NEW: Integration tests for API calls.
+
 ### [0.5.0]
 
 * NEW: Added socket timeout to API calls.

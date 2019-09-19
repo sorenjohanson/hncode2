@@ -24,7 +24,7 @@ This extension requires Visual Studio Code 1.38.0 or later to work properly.
 This extension contributes the following settings:
 
 * `hncode2.limitation`: Set the amount of items to be loaded on the front page.
-* `hncode2.defaultView`: Set the Default View of the tree view.\nPossible items are: 'top', 'new', 'ask' and 'show'.
+* `hncode2.defaultView`: Set the Default View of the tree view. Possible items are: 'top', 'new', 'ask' and 'show'.
 * `hncode2.requestTimeout`: Set the timeout for requests in milliseconds (ms).
 
 ## Known Issues
@@ -36,6 +36,11 @@ This extension contributes the following settings:
 The documentation for this extension is available at https://www.soeren.codes/hncode2/ and provided via TypeDoc.
 
 ## Release Notes
+
+### 1.0.0
+
+* NEW: Better error handling when no internet connectioon present (thanks to @ekarbe!)
+* NEW: Integration tests for API calls.
 
 ### 0.5.0
 
