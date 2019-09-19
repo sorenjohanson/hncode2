@@ -22,7 +22,7 @@ const restClient: rm.RestClient = new rm.RestClient('hncode', BASE_URL, undefine
  * Get a single story using item IDs from HN API.
  * @param id - Story ID, eg 192327.
  */
-export function getStory(id?: string): Thenable<HNData> {
+export function getStory(id?: string): Promise<HNData> {
     return new Promise<HNData>((c, e) => {
         restClient.get<HNData>('item/' + id + '.json?print=pretty').then(response => {
             if (response.result) {
@@ -39,7 +39,7 @@ export function getStory(id?: string): Thenable<HNData> {
 /**
  * Get the 500 top stories from HN API.
  */
-export function getTop(): Thenable<Array<number>> {
+export function getTop(): Promise<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('topstories.json?print=pretty').then(response => {
             if (response.result) {
@@ -54,7 +54,7 @@ export function getTop(): Thenable<Array<number>> {
 /**
  * Get the top 200 Ask HN stories from HN API.
  */
-export function getAsk(): Thenable<Array<number>> {
+export function getAsk(): Promise<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('askstories.json?print=pretty').then(response => {
             if (response.result) {
@@ -69,7 +69,7 @@ export function getAsk(): Thenable<Array<number>> {
 /**
  * Get the top 500 new stories from HN API.
  */
-export function getNew(): Thenable<Array<number>> {
+export function getNew(): Promise<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('newstories.json?print=pretty').then(response => {
             if (response.result) {
@@ -84,7 +84,7 @@ export function getNew(): Thenable<Array<number>> {
 /**
  * Get the top 200 Show HN stories from HN API.
  */
-export function getShow(): Thenable<Array<number>> {
+export function getShow(): Promise<Array<number>> {
     return new Promise<Array<number>>((c, e) => {
         restClient.get<Array<number>>('showstories.json?print=pretty').then(response => {
             if (response.result) {
