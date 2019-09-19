@@ -29,13 +29,17 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-* Something, somewhere.
+* Sometimes, requests may time out without an appropriate error being displayed.
 
 ## Documentation
 
 The documentation for this extension is available at https://www.soeren.codes/hncode2/ and provided via TypeDoc.
 
 ## Release Notes
+
+### 1.0.1
+
+* CHANGED: Request Timeout down from 10.000 ms to 500 ms.
 
 ### 1.0.0
 

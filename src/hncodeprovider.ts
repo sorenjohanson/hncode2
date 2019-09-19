@@ -91,7 +91,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 							getStories(response).then(response => {
 								c(response);
 							}).catch(error => {
-								e(error.message);
+								e(error);
 							});
 						}).catch(error => {
 							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {
@@ -107,7 +107,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 							getStories(response).then(response => {
 								c(response);
 							}).catch(error => {
-								e(error.message);
+								e(error);
 							});
 						}).catch(error => {
 							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {
@@ -123,7 +123,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 							getStories(response).then(response => {
 								c(response);
 							}).catch(error => {
-								e(error.message);
+								e(error);
 							});
 						}).catch(error => {
 							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {

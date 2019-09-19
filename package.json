@@ -2,7 +2,7 @@
 	"name": "hncode2",
 	"displayName": "Hacker News for VSCode",
 	"description": "Browse Hacker News in a tree view tab",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "sjohanson",
 	"author": "Søren Johanson <contact@soeren.codes>",
 	"engines": {
@@ -117,9 +117,9 @@
 					},
 					"hncode2.requestTimeout": {
 						"type": "integer",
-						"default": 10000,
-						"minimum": 1000,
-						"maximum": 60000,
+						"default": 500,
+						"minimum": 400,
+						"maximum": 10000,
 						"description": "Set the timeout for requests in milliseconds (ms)."
 					},
 					"hncode2.defaultView": {

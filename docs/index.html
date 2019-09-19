@@ -2419,12 +2419,6 @@ img {
 		<li class=" tsd-kind-function">
 			<a href="globals.html#gettop" class="tsd-kind-icon">get<wbr>Top</a>
 		</li>
-		<li class=" tsd-kind-function tsd-is-not-exported">
-			<a href="globals.html#main" class="tsd-kind-icon">main</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#run" class="tsd-kind-icon">run</a>
-		</li>
 	</ul>
 </nav>
 <div class="container container-main">
@@ -2465,7 +2459,7 @@ img {
 				<h2>Known Issues</h2>
 			</a>
 			<ul>
-				<li>Something, somewhere.</li>
+				<li>Sometimes, requests may time out without an appropriate error being displayed.</li>
 			</ul>
 			<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 				<h2>Documentation</h2>
@@ -2474,6 +2468,12 @@ img {
 			<a href="#release-notes" id="release-notes" style="color: inherit; text-decoration: none;">
 				<h2>Release Notes</h2>
 			</a>
+			<a href="#101" id="101" style="color: inherit; text-decoration: none;">
+				<h3>1.0.1</h3>
+			</a>
+			<ul>
+				<li>CHANGED: Request Timeout down from 10.000 ms to 500 ms.</li>
+			</ul>
 			<a href="#100" id="100" style="color: inherit; text-decoration: none;">
 				<h3>1.0.0</h3>
 			</a>
@@ -2577,8 +2577,6 @@ img {
 							<li class="tsd-kind-function"><a href="globals.html#getstories" class="tsd-kind-icon">get<wbr>Stories</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#getstory" class="tsd-kind-icon">get<wbr>Story</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#gettop" class="tsd-kind-icon">get<wbr>Top</a></li>
-							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#main" class="tsd-kind-icon">main</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#run" class="tsd-kind-icon">run</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2592,7 +2590,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://hacker-news.firebaseio.com/v0/"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://hacker-news.firebaseio.com/v0/&quot;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L9">api.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L9">api.ts:9</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2607,7 +2605,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WorkspaceConfiguration</span><span class="tsd-signature-symbol"> =&nbsp;vscode.workspace.getConfiguration(&quot;hncode2&quot;)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L14">api.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L14">api.ts:14</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2622,7 +2620,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">rest<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RestClient</span><span class="tsd-signature-symbol"> =&nbsp;new rm.RestClient(&#x27;hncode&#x27;, BASE_URL, undefined, { socketTimeout: config.requestTimeout })</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L19">api.ts:19</a></li>
+						<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L19">api.ts:19</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2644,7 +2642,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/extension.ts#L11">extension.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/extension.ts#L11">extension.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2675,7 +2673,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/extension.ts#L32">extension.ts:32</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/extension.ts#L32">extension.ts:32</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2692,7 +2690,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L57">api.ts:57</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L57">api.ts:57</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2714,7 +2712,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L72">api.ts:72</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L72">api.ts:72</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2736,7 +2734,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L87">api.ts:87</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L87">api.ts:87</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2758,7 +2756,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L103">api.ts:103</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L103">api.ts:103</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2789,7 +2787,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L25">api.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L25">api.ts:25</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2820,7 +2818,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/api.ts#L42">api.ts:42</a></li>
+								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/master/src/api.ts#L42">api.ts:42</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2832,42 +2830,8 @@ img {
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-				<a name="main" class="tsd-anchor"></a>
-				<h3>main</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">main<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/test/runTest.ts#L5">test/runTest.ts:5</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="run" class="tsd-anchor"></a>
-				<h3>run</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/CER10TY/hncode2/blob/b2ebbaa/src/test/suite/index.ts#L5">test/suite/index.ts:5</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
 		</section>
-		<footer class="with-border-bottom">
+		<footer>
 			<div class="container">
 				<h2>Legend</h2>
 				<div class="tsd-legend-group">
@@ -2927,9 +2891,6 @@ img {
 				</div>
 			</div>
 		</footer>
-		<div class="container tsd-generator">
-			<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-		</div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -2941,7 +2902,7 @@ img {
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-142593158-1', '');
+        ga('create', 'UA-148189416-1', '');
         ga('send', 'pageview');
     </script>
 </body>

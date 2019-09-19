@@ -2,6 +2,10 @@
 
 All notable changes to the "hncode2" extension will be documented in this file.
 
+### [1.0.1]
+
+* CHANGED: Request Timeout down from 10.000 ms to 500 ms.
+
 ### [1.0.0]
 
 * NEW: Better error handling when no internet connectioon present (thanks to @ekarbe!)

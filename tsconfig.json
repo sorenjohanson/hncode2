@@ -21,6 +21,10 @@
 	"typedocOptions": {
 		"mode": "file",
 		"out": "docs",
-		"theme": "minimal"
+		"theme": "minimal",
+		"hideGenerator": true,
+		"exclude": ["**/test/**/*"],
+		"gaID": "UA-148189416-1",
+		"gitRevision": "master"
 	}
 }
