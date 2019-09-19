@@ -17,7 +17,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	 */
 	constructor(public identifier: string) {
 		vscode.commands.executeCommand('setContext', `${this.identifier}-enabled`, true);
-    }
+	}
 
 	/**
 	 * Method that refreshes the tree view (this calls [[getChildren]] again)
@@ -25,7 +25,7 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	public refresh(): any {
 		this._onDidChangeTreeData.fire();
 	}
-	
+
 	/**
 	 * Function that sets new identifying string and refreshes view after
 	 * @param newIdentifier - New string that identifies which tree is being provided
@@ -41,22 +41,22 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 	 * Gets a single tree item for display purposes (called by vscode.TreeDataProvider)
 	 * @param element - Data Element passed on from [[getChildren]]
 	 */
-    public getTreeItem(element: HNData): vscode.TreeItem {
+	public getTreeItem(element: HNData): vscode.TreeItem {
 		let url: vscode.Uri = element.url ? element.url : <vscode.Uri><unknown>(`https://news.ycombinator.com/item?id=${element.id}`);
 		let collapsed = element.isComment ? vscode.TreeItemCollapsibleState.None : vscode.TreeItemCollapsibleState.Collapsed;
 		return new Story(`${element.title}`, collapsed, this.identifier, url, {
-            command: 'hncode.openurl',
-            title: '',
-            arguments: [url]
-        });
-    }
+			command: 'hncode.openurl',
+			title: '',
+			arguments: [url]
+		});
+	}
 
 	/**
 	 * Main function called by vscode.TreeDataProvider to populate tree view with relevant stories
 	 * @param element - Data Element of which to get comments from
 	 */
-    public getChildren(element?: HNData): Thenable<HNData[]> {
-        return new Promise<HNData[]>((c, e) => {
+	public getChildren(element?: HNData): Thenable<HNData[]> {
+		return new Promise<HNData[]>((c, e) => {
 			if (element) {
 				let data: HNData[] = [];
 				let comments: HNData = {
@@ -69,14 +69,21 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 				data.push(comments);
 				c(data);
 			} else {
-				switch(this.identifier) {
+				switch (this.identifier) {
 					case "top":
 						getTop().then(response => {
 							getStories(response).then(response => {
 								c(response);
 							}).catch(error => {
-								e(error.message);
+								e(error);
 							});
+						}).catch(error => {
+							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {
+								vscode.window.showErrorMessage("Error: No active internet connection.");
+							} else {
+								vscode.window.showErrorMessage(error);
+							}
+							e(error);
 						});
 						break;
 					case "ask":
@@ -86,6 +93,13 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 							}).catch(error => {
 								e(error.message);
 							});
+						}).catch(error => {
+							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {
+								vscode.window.showErrorMessage("Error: No active internet connection.");
+							} else {
+								vscode.window.showErrorMessage(error);
+							}
+							e(error);
 						});
 						break;
 					case "new":
@@ -95,6 +109,13 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 							}).catch(error => {
 								e(error.message);
 							});
+						}).catch(error => {
+							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {
+								vscode.window.showErrorMessage("Error: No active internet connection.");
+							} else {
+								vscode.window.showErrorMessage(error);
+							}
+							e(error);
 						});
 						break;
 					case "show":
@@ -104,12 +125,19 @@ export class HNTreeDataProvider implements vscode.TreeDataProvider<HNData> {
 							}).catch(error => {
 								e(error.message);
 							});
+						}).catch(error => {
+							if (error === "getaddrinfo ENOTFOUND hacker-news.firebaseio.com hacker-news.firebaseio.com:443") {
+								vscode.window.showErrorMessage("Error: No active internet connection.");
+							} else {
+								vscode.window.showErrorMessage(error);
+							}
+							e(error);
 						});
 						break;
 				}
 			}
-        });
-    }
+		});
+	}
 }
 
 /**
@@ -128,7 +156,7 @@ export class Story extends vscode.TreeItem {
 		public readonly label: string,
 		public readonly collapsibleState: vscode.TreeItemCollapsibleState,
 		public readonly cValue: string,
-        private url?: vscode.Uri,
+		private url?: vscode.Uri,
 		public readonly command?: vscode.Command
 	) {
 		super(label, collapsibleState);
